@@ -42,7 +42,7 @@ sudo apt install phpmyadmin php-mbstring php-zip php-gd php-json php-curl
 # mysql -u root -p
 # UNINSTALL COMPONENT "file://component_validate_password";
 #Then try installing the phpmyadmin package again and it will work as expected:
-# sudo apt install phpmyadmin php-mbstring php-zip php-gd php-json php-curl
+# sudo apt install phpmyadmin
 #Once phpMyAdmin is installed, you can open the MySQL prompt once again with sudo mysql or mysql -u root -p and then run the following command to re-enable the Validate Password component:
 # INSTALL COMPONENT "file://component_validate_password";
 
