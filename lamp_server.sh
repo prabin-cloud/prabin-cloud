@@ -21,6 +21,15 @@ sudo ufw status
 #Installing MySQL
 echo "installing MYSQL...."
 sudo apt install mysql-server
+
+#Installing phpMyAdmin
+echo "Installing phpMyAdmin..."
+sudo apt install phpmyadmin php-mbstring php-zip php-gd php-json php-curl
+#For the server selection, choose apache2 <$>[warning] Warning: When the prompt appears, apache2 is highlighted, but not selected. If you do not hit SPACE to select Apache, the installer will not move the necessary files during installation. Hit SPACE, TAB, and then ENTER to select Apache.
+sudo phpenmod mbstring
+sudo systemctl restart apache2
+
+#securing MYSQL installation
 sudo mysql_secure_installation
 #selcet "yse" and set the password strength for your mysql user (my recomendation is 1)
 #enter password
@@ -32,10 +41,7 @@ sudo apt install php libapache2-mod-php php-mysql
 #check PHP version
 php -v
 
-#Installing phpMyAdmin
-echo "Installing phpMyAdmin..."
-sudo apt install phpmyadmin php-mbstring php-zip php-gd php-json php-curl
-#For the server selection, choose apache2 <$>[warning] Warning: When the prompt appears, apache2 is highlighted, but not selected. If you do not hit SPACE to select Apache, the installer will not move the necessary files during installation. Hit SPACE, TAB, and then ENTER to select Apache.
+
 
 #if you have used the validate password option in your mysql setup, there might be some error while installing the phpmyadmin, to solve this issue please abort the process and follow the steps below
 # sudo mysql
@@ -46,9 +52,6 @@ sudo apt install phpmyadmin php-mbstring php-zip php-gd php-json php-curl
 #Once phpMyAdmin is installed, you can open the MySQL prompt once again with sudo mysql or mysql -u root -p and then run the following command to re-enable the Validate Password component:
 # INSTALL COMPONENT "file://component_validate_password";
 
-#continued PHPmyadmin installation
-sudo phpenmod mbstring
-sudo systemctl restart apache2
 
 #Allowing root user to access database through phpmyadmin dashboard.
 # sudo mysql
