@@ -4,7 +4,7 @@
 # Check if user is root
 [ $(id -u) != "0" ] && { echo "${CFAILURE}Error: You must be root to run this script${CEND}"; exit 1; }
 
-#updating the sevrer
+#updating the server
 sudo apt update
 
 #lets install apache web server first
